@@ -1,0 +1,15 @@
+name: Protect main
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  prevent-direct-push:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Direct pushes to main are prohibited
+        run: echo "Direct pushes to main are prohibited. Use a Pull Request." && exit 1
+          
