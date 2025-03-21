@@ -1,0 +1,11 @@
+name: Assert Branch Naming Rules
+on: [push, create]
+
+jobs:
+  assert-branch-naming-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: deepakputhraya/action-branch-name@master
+        with:
+          allowed_prefixes: feature
+          ignore: main
