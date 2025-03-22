@@ -13,20 +13,6 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 20
-
-      - name: Install Node.js dependencies
-        run: npm ci
-
-      - name: Install Netlify
-        run: npm install netlify-cli -g
-
-      - name: Build
-        run: netlify build
-
       - name: Deploy on Netlify
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
