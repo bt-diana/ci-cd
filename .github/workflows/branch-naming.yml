@@ -1,0 +1,16 @@
+name: Assert branch naming rules
+on:
+  pull_request_target:
+    types: [assigned, opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+  assert-branch-naming-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '^feature\/.+$' 
+          ignore: main
