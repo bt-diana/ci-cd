@@ -12,13 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: nelonoel/branch-name@v1.0.1
-
       - uses: jsmrcaga/action-netlify-deploy@master
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          deploy_alias: ${{ env.BRANCH_NAME }}
+          deploy_alias: ${{ github.event.pull_request.head.ref }}
 
       - name: Status check
         uses: Sibz/github-status-action@v1.1.1
