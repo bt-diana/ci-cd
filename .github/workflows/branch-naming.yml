@@ -1,8 +1,5 @@
 name: Assert branch naming rules
-on: 
-  create:
-    branches-ignore:
-      - main
+on:
   push:
     branches-ignore:
       - main
