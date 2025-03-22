@@ -6,9 +6,6 @@ on:
   create:
     branches-ignore:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   assert-branch-naming-rules:
