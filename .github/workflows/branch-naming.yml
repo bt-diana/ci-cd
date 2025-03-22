@@ -1,10 +1,10 @@
 name: Assert branch naming rules
 on: 
-  push:
-    branches-ignore:
-      - main
   create:
     branches-ignore:
+      - main
+  pull_request:
+    branches:
       - main
 
 jobs:
