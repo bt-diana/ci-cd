@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  assert-branch-naming-rules:
+  check-branch-name:
     name: Check branch name
     runs-on: ubuntu-latest
     steps:
