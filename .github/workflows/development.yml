@@ -1,5 +1,14 @@
 name: Assert Branch Naming Rules
-on: [push, create]
+on: 
+  push:
+    branches-ignore:
+      - main
+  create:
+    branches-ignore:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   assert-branch-naming-rules:
