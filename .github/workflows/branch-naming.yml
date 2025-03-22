@@ -1,0 +1,19 @@
+name: Assert branch naming rules
+on: 
+  push:
+    branches-ignore:
+      - main
+  create:
+    branches-ignore:
+      - main
+
+jobs:
+  assert-branch-naming-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        if: github.event_name == 'pull_request' || github.event.pull_request == null
+        uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '^feature\/.+$' 
+          ignore: main
