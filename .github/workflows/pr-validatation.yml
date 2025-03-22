@@ -1,12 +1,12 @@
-name: Validate commit
-on: 
-  push:
+name: Validate PR
+on:
+  pull_request:
     branches:
-      - 'feature/**'
+      - main
 
 jobs:
   validate-commit:
-    name: Validate commit
+    name: Validate PR
     runs-on: ubuntu-latest
 
     steps:
