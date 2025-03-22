@@ -5,8 +5,8 @@ on:
       - 'feature/**'
 
 jobs:
-  run-linters:
-    name: Run linters
+  set-up-repo:
+    name: Set up repository
     runs-on: ubuntu-latest
 
     steps:
@@ -21,5 +21,10 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Run linters
         run: npm run lint
