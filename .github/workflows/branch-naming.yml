@@ -5,11 +5,16 @@ on:
       - main
 
 jobs:
-  assert-branch-naming-rules:
+  check-branch-name:
+    name: Check branch name
     runs-on: ubuntu-latest
     steps:
       - name: Check branch name
-        uses: deepakputhraya/action-branch-name@master
-        with:
-          regex: '^feature\/.+$' 
-          ignore: main
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          if [[ "$BRANCH_NAME" =~ ^feature\/.+$ ]]; then
+            echo "✅ Branch name is valid"
+          else
+            echo "❌ Invalid branch name: $BRANCH_NAME"
+            exit 1
+          fi
