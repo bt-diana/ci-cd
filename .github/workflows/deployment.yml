@@ -1,27 +1,29 @@
 name: Deploy the app
+
 on:
-  pull_request_target:
-    branches:
-      - main
+  pull_request:
+    types: ['opened', 'edited', 'synchronize']
 
 jobs:
   deploy:
     name: Deploy the app
     runs-on: ubuntu-latest
+
     steps:
-        - name: Check out Git repository
-          uses: actions/checkout@v4
-  
-        - name: Set up Node.js
-          uses: actions/setup-node@v1
-          with:
-            node-version: 20
-  
-        - name: Install Node.js dependencies
-          run: npm ci
+      - uses: actions/checkout@v4
 
-        - name: Build
-          run: npm run build
+      - uses: nelonoel/branch-name@v1.0.1
 
-        - name: Deploy
-          run: npm run deploy
+      - uses: jsmrcaga/action-netlify-deploy@master
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          deploy_alias: ${{ env.BRANCH_NAME }}
+
+      - name: Status check
+        uses: Sibz/github-status-action@v1.1.1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify preview
+          state: success
+          target_url: ${{ env.NETLIFY_PREVIEW_URL }}
