@@ -13,13 +13,13 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v4
 
-      - name: Deploy on Netlofy
-        # uses: jsmrcaga/action-netlify-deploy@master
-        env:
+      - name: Deploy on Netlify
+        uses: jsmrcaga/action-netlify-deploy@v2.0.0
+        with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           deploy_alias: ${{ github.event.pull_request.head.ref }}
-        run: netlify deploy
+        # run: netlify deploy
 
     #   - name: Status check
     #     uses: Sibz/github-status-action@v1.1.1
