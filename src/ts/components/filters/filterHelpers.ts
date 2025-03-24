@@ -54,7 +54,7 @@ function showText(length: number) {
   if (!length) {
     container.style.fontSize = '30px';
     container.style.fontWeight = '500';
-    container.style.color = '#22795D';
+    container.style.color = '#186049';
     container.innerHTML = 'NOT FOUND :(';
   } else {
     container.style.fontSize = '';

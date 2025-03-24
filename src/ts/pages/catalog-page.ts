@@ -73,7 +73,7 @@ class CatalogPage extends Page {
       const button = e.target;
       button.style.color = '#FFFFFF';
       button.style.border = 'none';
-      button.style.backgroundColor = '#ab5abb';
+      button.style.backgroundColor = '#843c93';
       button.textContent = 'Copied!';
       setTimeout(function () {
         button.style.color = '';
