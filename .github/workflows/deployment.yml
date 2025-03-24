@@ -13,6 +13,11 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20
+
       - name: Deploy on Netlify
         uses: jsmrcaga/action-netlify-deploy@v2.4.0
         with:
