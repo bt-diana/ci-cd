@@ -13,7 +13,6 @@
   align-items: flex-start;
   justify-content: center;
   overflow: auto;
-  transition: .5s;
   opacity: 0;
   visibility: hidden;
   z-index: 101;
@@ -23,6 +22,7 @@
     backdrop-filter: blur(3px);
     opacity: 1;
     visibility: visible;
+    transition: .5s;
   }
 }
 
