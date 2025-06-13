@@ -7,7 +7,7 @@ The goal of the task was to:
 - Implement **accessibility improvements** based on Lighthouse reports
 - Perform **performance optimization** using DevTools and modern web practices
 
-🚀 Deployment: [before](https://feature-ci-cd--joyful-puppy-de9da6.netlify.app/) | [after](https://joyful-puppy-de9da6.netlify.app/)
+🚀 Deployment: [before](https://joyful-puppy-de9da6.netlify.app/) | [after](https://feature-ci-cd--joyful-puppy-de9da6.netlify.app/)
 
 
 ## Features
