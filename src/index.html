@@ -4,11 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="./assets/svg/empty-cart-icon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;500&display=swap"
-    rel="stylesheet">
   <title>Online-store</title>
 </head>
 <body class="body">
@@ -39,7 +35,7 @@
     </main>
     <section id="promo" class="promo">
       <div class="container">
-        <img class="promo__photo" src="assets/img/eucalypt.png" alt="eucalypt">
+        <img class="promo__photo" width="208" height="350" src="assets/img/eucalypt.webp" alt="eucalypt" loading="lazy">
         <div class="promo__container">
           <h3 class="promo__title">Get <span>10% OFF</span> on your purchase</h3>
           <div class="promo__descr">Use promo codes:</div>
@@ -71,7 +67,7 @@
         <div class="footer__column">
           <p class="footer__title">RS School</p>
           <ul class="footer__list">
-            <li class="footer__item"><a href="https://rs.school/js/" target="_blank"><img class="rs-school__img" alt="RS School logo" src="./assets/svg/rs_school.svg" width="80"></a>
+            <li class="footer__item"><a href="https://rs.school/js/" target="_blank"><img class="rs-school__img" alt="RS School logo" src="./assets/svg/rs_school.svg" width="80" height="30" loading="lazy"></a>
             </li>
             <li class="footer__item"><span>2022</span>
             </li>
@@ -178,19 +174,19 @@
           <div class="range">
             <div class="range__value">
               <span>min</span>
-              <input type="number" class="input-min" value="1" max="100">
+              <input type="number" class="input-min" value="1" max="100" aria-label="Minimum price amount">
               <span>$</span>
               <div class="range__separator">-</div>
               <span>max</span>
-              <input type="number" class="input-max" value="100" max="100">
+              <input type="number" class="input-max" value="100" max="100" aria-label="Maximum price amount">
               <span>$</span>
             </div>
             <div class="range__slider slider">
               <div class="slider__progress"></div>
             </div>
             <div class="range__range-input">
-              <input type="range" class="range-min" min="1" max="106" value="1" step="1">
-              <input type="range" class="range-max" min="1" max="100" value="100" step="1">
+              <input type="range" class="range-min" min="1" max="106" value="1" step="1" aria-label="Minimum price slider thumb">
+              <input type="range" class="range-max" min="1" max="100" value="100" step="1" aria-label="Maximum price slider thumb">
             </div>
           </div>
         </div>
@@ -208,17 +204,17 @@
           <div class="range">
             <div class="range__value">
               <span>min</span>
-              <input type="number" class="input-min" value="1" max="65">
+              <input type="number" class="input-min" value="1" max="65" aria-label="Minimum amount in stock">
               <div class="range__separator">-</div>
               <span>max</span>
-              <input type="number" class="input-max" value="65" max="65">
+              <input type="number" class="input-max" value="65" max="65" aria-label="Maximum amount in stock">
             </div>
             <div class="range__slider slider">
               <div class="slider__progress"></div>
             </div>
             <div class="range__range-input">
-              <input type="range" class="range-min" min="1" max="69" value="1" step="1">
-              <input type="range" class="range-max" min="1" max="65" value="65" step="1">
+              <input type="range" class="range-min" min="1" max="69" value="1" step="1" aria-label="Minimum amount in stock slider thumb">
+              <input type="range" class="range-max" min="1" max="65" value="65" step="1" aria-label="Maximum amount in stock slider thumb">
             </div>
           </div>
         </div>
@@ -243,7 +239,7 @@
               </div>
             </div>
             <div class="found-products">Found: <div><span class="found-products__num">24</span><span class="found-products__num"> / 24</span></div></div>
-            <input type="text" placeholder="Search" class="sort-input">
+            <input type="text" placeholder="Search" class="sort-input" aria-label="Search">
           </div>
     
           <div class="products__layout layout">
